@@ -1,0 +1,10 @@
+services:
+  taxi-etl:
+    build: .
+    image: new_york_taxi_etl:v1
+    container_name: new_york_taxi_etl
+    environment:
+      DATA_URL: "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
